@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Tensión</title>
+
+    <style>
+        body {
+            background-color: red;
+            text-align: center;
+        }
+
+        .titulo {
+            font-family: Courier, monospace;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 32px;
+        }
+
+        .borde {
+            width: 170px;
+            height: 100px;
+            border: 5px solid black;
+            border-radius: 18px;
+            background-color: black;
+            margin: 20px auto;
+        }
+
+        .pantalla {
+            width: 160px;
+            height: 90px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: cyan;
+            margin: 4px;
+        }
+
+        .pantalla span {
+            font-size: 16px;
+        }
+
+        .tension {
+            font-weight: bold;
+        }
+
+        .boton {
+            width: 80px;
+            height: 45px;
+            background-color: yellow;
+            color: black;
+            border: 2px solid black;
+            border-radius: 80px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="titulo">MONITOR TENSION</h1>
+
+    <div class="borde">
+        <div class="pantalla">
+            <span>
+                &nbsp;&nbsp;Tension:
+                <strong class="tension" id="valorTension">12.5V</strong>
+            </span>
+        </div>
+    </div>
+
+    <button class="boton" id="botonToggle" onclick="toggleLED()">
+        APAGAR
+    </button>
+
+    <script>
+        let ledEncendido = true;
+
+        function toggleLED() {
+            ledEncendido = !ledEncendido;
+
+            const boton = document.getElementById("botonToggle");
+
+            if (ledEncendido) {
+                boton.textContent = "APAGAR";
+            } else {
+                boton.textContent = "ENCENDER";
+            }
+        }
+    </script>
+
+</body>
+</html>

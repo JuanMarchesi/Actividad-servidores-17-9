@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semasforo</title>
+
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .titulo {
+            font-family: Impact, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .boton {
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: 15px auto;
+            color: black;
+            font-size: 23px;
+            border: 3px solid black;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        .lento {
+            background-color: red;
+        }
+
+        .normal {
+            background-color: yellow;
+        }
+
+        .rápido {
+            background-color: green;
+        }
+
+        .emergencia {
+            background-color: orange;
+        }
+
+        #modo {
+            display: block;
+            margin-top: 20px;
+            font-size: 23px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="titulo">SEMAFORO</h1>
+
+    <button class="boton lento" onclick="seleccionarModo('lento')">
+        LENTO
+    </button>
+
+    <button class="boton normal" onclick="seleccionarModo('normal')">
+        NORMAL
+    </button>
+
+    <button class="boton rápido" onclick="seleccionarModo('rapido')">
+        RAPIDO
+    </button>
+
+    <button class="boton emergencia" onclick="seleccionarModo('emergencia')">
+        EMERGENCIA
+    </button>
+
+    <span id="modo">Modo: <strong>XXX</strong></span>
+
+    <script>
+        function seleccionarModo(modo) {
+            document.getElementById("modo").innerHTML =
+                "Modo: <strong>" + modo + "</strong>";
+        }
+    </script>
+
+</body>
+</html>
